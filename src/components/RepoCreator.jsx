@@ -20,7 +20,7 @@ const RepoCreator = ({ setIsOpen }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const accessToken = process.env.REACT_APP_GITHUB_ACCESS_TOKEN;
-
+console.log(accessToken);
     try {
       const response = await fetch("https://api.github.com/user/repos", {
         method: "POST",
