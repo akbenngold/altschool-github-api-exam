@@ -6,6 +6,7 @@
   text-align: center;
   color: var(--clr-blue);
   position: relative;
+  overflow: hidden;
 
   &__top {
     display: flex;
