@@ -1,0 +1,131 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--clr-blue);
+  position: relative;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    img {
+      position: absolute;
+      z-index: -1000;
+      opacity: 0.3;
+    }
+    .img-1 {
+      max-height: 2rem;
+      left: 30rem;
+      top: 10rem;
+    }
+    .img-2 {
+      max-height: 2rem;
+      left: 50rem;
+      bottom: 10rem;
+    }
+    .img-3 {
+      max-height: 6rem;
+      bottom: 20rem;
+      right: 40rem;
+    }
+    .img-4 {
+      max-height: 6rem;
+      rotate: 90deg;
+      bottom: 3rem;
+      left: 3rem;
+    }
+    .img-5 {
+      max-height: 4rem;
+      rotate: 270deg;
+      top: 30rem;
+    }
+    .img-6 {
+      max-height: 4rem;
+      right: 50rem;
+      bottom: 30rem;
+    }
+    .img-7 {
+      max-height: 8rem;
+      left: 50rem;
+      rotate: -30deg;
+      top: 10rem;
+    }
+    .img-8 {
+      max-height: 8rem;
+      left: 20rem;
+      top: 40rem;
+    }
+    .img-9 {
+      max-height: 10rem;
+
+      top: 10rem;
+    }
+    .img-10 {
+      max-height: 10rem;
+      left: -5rem;
+      top: 25rem;
+    }
+    .img-11 {
+      max-height: 12rem;
+      top: -20rem;
+    }
+    .img-12 {
+      max-height: 1rem;
+
+      top: 35rem;
+    }
+    .img-13 {
+      max-height: 2rem;
+
+      top: 10rem;
+    }
+    .img-14 {
+      max-height: 2rem;
+
+      right: 140rem;
+    }
+    .img-15 {
+      max-height: 4rem;
+
+      right: 120rem;
+    }
+    .img-16 {
+      max-height: 4rem;
+
+      right: 20rem;
+    }
+    .img-17 {
+      max-height: 6rem;
+
+      right: 0rem;
+    }
+    .img-18 {
+      max-height: 20rem;
+      right: 18rem;
+      opacity: 0.9;
+      bottom: -20rem;
+    }
+    .img-19 {
+      max-height: 2rem;
+
+      right: 30rem;
+    }
+    .img-20 {
+      max-height: 4rem;
+
+      right: 60rem;
+    }
+    .img-21 {
+      max-height: 3rem;
+
+      right: 80rem;
+    }
+    .img-22 {
+      max-height: 6rem;
+
+      right: 100rem;
+    }
+  }
+}

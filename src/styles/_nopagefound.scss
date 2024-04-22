@@ -1,0 +1,28 @@
+.pagenotfound {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  align-items: center;
+  margin-top: 2rem;
+
+  img {
+    height: 25rem;
+    animation: bounce 0.5s infinite alternate;
+  }
+  h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    text-align: center;
+    color: rgb(207, 39, 39);
+  }
+  h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+    color: rgb(117, 24, 24);
+  }
+
+  &__buttons {
+    display: flex;
+  }
+}

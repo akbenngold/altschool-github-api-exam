@@ -1,0 +1,63 @@
+.repos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5rem;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search {
+  flex: 4;
+  outline: none;
+  border: none;
+  height: 3rem;
+  padding: 1rem;
+}
+
+.select {
+  flex: 1;
+  outline: none;
+  border: none;
+  height: 3rem;
+}
+
+.list {
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+
+  h3 {
+    transition: all 0.3s;
+    a {
+      text-decoration: none;
+      color: var(--clr-blue);
+      font-size: 1.5rem;
+    }
+    &:hover {
+      scale: 1.05;
+    }
+  }
+  h4 {
+    color: grey;
+  }
+}
+.pagination {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  .pageNumber {
+    font-size: 1.2rem;
+  }
+}
