@@ -19,7 +19,7 @@ const RepoCreator = ({ setIsOpen }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const accessToken = process.env.VITE_GITHUB_ACCESS_TOKEN;
+    const accessToken = import.meta.env.VITE_GITHUB_ACCESS_TOKEN;
 console.log(accessToken);
     try {
       const response = await fetch("https://api.github.com/user/repos", {
