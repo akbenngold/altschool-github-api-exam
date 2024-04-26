@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
-const RepoDeleter = ({ repo }) => {
+const RepoDeleter = ({ repo, setDlt }) => {
   const [error, setError] = useState(null);
 
   const handleDelete = async () => {
+    setDlt(false);
     const accessToken = import.meta.env.VITE_GITHUB_ACCESS_TOKEN;
     try {
       const response = await fetch(
@@ -20,7 +21,7 @@ const RepoDeleter = ({ repo }) => {
 
         setTimeout(() => {
           window.location.href = "https://ojimagithub.netlify.app/repos/";
-        }, 4000);
+        }, 2000);
       } else {
         const data = await response.json();
         setError(data.message);

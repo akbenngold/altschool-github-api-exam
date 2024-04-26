@@ -6,6 +6,7 @@ import RepoDeleter from "./RepoDeleter";
 function RepoDetails() {
   const location = useLocation();
   const { repo } = location.state || {};
+  const [dlt, setDlt] = useState(false);
 
   if (!repo) {
     return <h4>No repository details found.</h4>;
@@ -28,13 +29,33 @@ function RepoDetails() {
           <li>Last Update: {repo.updated_at}</li>
           <li>Date of Creation: {repo.created_at}</li>
         </ul>
-        <RepoDeleter repo={repo} />
-        <p style={{ fontSize: "0.7rem" }}>
-          Please don't delete my repo 😢 <br />
-          <span style={{ color: "blue" }}>Create</span> a test repo and{" "}
-          <span style={{ color: "red" }}>delete</span>. <br />
-          Thank you
-        </p>
+
+        {dlt ? (
+          <div>
+            <RepoDeleter repo={repo} setDlt={setDlt} />
+            <p style={{ fontSize: "0.7rem" }}>
+              Please don't delete my repo 😢 <br />
+              <span style={{ color: "blue" }}>Create</span> a test repo and{" "}
+              <span style={{ color: "red" }}>delete</span>. <br />
+              Thank you
+            </p>
+          </div>
+        ) : (
+          <button
+            style={{
+              color: "white",
+              backgroundColor: "red",
+              fontSize: "0.7rem",
+              width: "4rem",
+              height: "2rem",
+            }}
+            onClick={() => {
+              setDlt(true);
+            }}
+          >
+            Delete
+          </button>
+        )}
       </div>
     </ErrorBoundary>
   );
