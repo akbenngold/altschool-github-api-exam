@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ErrorBoundary from "./ErrorBoundary";
-import coneImage from "./assets/cone.svg";
-import loopImage from "./assets/loop.svg";
-import githubImage from "./assets/github.svg";
+import coneImage from "./assets/cone.png";
+import loopImage from "./assets/loop.png";
+import githubImage from "./assets/github.png";
 function Home() {
   return (
     <ErrorBoundary>
