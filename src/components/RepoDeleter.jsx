@@ -21,7 +21,7 @@ const RepoDeleter = ({ repo, setDlt }) => {
 
         setTimeout(() => {
           window.location.href = "https://ojimagithub.netlify.app/repos/";
-        }, 2000);
+        }, 500);
       } else {
         const data = await response.json();
         setError(data.message);
