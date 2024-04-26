@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import ErrorBoundary from "./ErrorBoundary";
+import RepoDeleter from "./RepoDeleter";
 
 function RepoDetails() {
   const location = useLocation();
@@ -12,7 +13,6 @@ function RepoDetails() {
 
   return (
     <ErrorBoundary>
-      {" "}
       <div className="repodetails">
         <h2>{repo.name}</h2>
         <ul className="repolist">
@@ -20,19 +20,16 @@ function RepoDetails() {
           {repo.language ? <li>Language: {repo.language}</li> : null}
           <li>
             Link to Github:{" "}
-            <a
-              href="http://github.com/akbenngold/altschool-assignments"
-              target="__blank"
-            >
+            <a href={repo.html_url} target="__blank" rel="noopener noreferrer">
               {repo.html_url}
             </a>
           </li>
-
           <li>Clone URL: {repo.clone_url}</li>
           <li>Last Update: {repo.updated_at}</li>
           <li>Date of Creation: {repo.created_at}</li>
         </ul>
-        {console.log(repo)}
+        {/* Render the RepoDeleter component */}
+        <RepoDeleter repo={repo} />
       </div>
     </ErrorBoundary>
   );
