@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import RepoCreator from "./RepoCreator";
@@ -11,6 +11,7 @@ function Repos() {
   const [filterLanguage, setFilterLanguage] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [isOpen, setIsOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchRepos = async () => {
@@ -23,10 +24,16 @@ function Repos() {
         }
         const data = await response.json();
         setRepos(data);
-      } catch (error) {}
+        setLoading(false);
+      } catch (error) {
+        console.log(error.message);
+        setLoading(false);
+      }
     };
 
-    fetchRepos();
+    setTimeout(() => {
+      fetchRepos();
+    }, 1000);
   }, []);
 
   const handleSearchQuery = (e) => {
@@ -82,7 +89,6 @@ function Repos() {
       >
         <RepoCreator setIsOpen={setIsOpen} />
       </Modal>
-
       {/* FILTER */}
       <div className="filter">
         <input
@@ -106,24 +112,26 @@ function Repos() {
           <option value="Ruby">Ruby</option>
         </select>
       </div>
-
       {/* REPOLIST */}
-      <div className="list">
-        {filteredRepos.length > 0 ? (
-          filteredRepos.slice(startIndex, endIndex).map((repo) => {
-            return (
-              <h3 key={repo.name}>
-                <Link to={`/repos/${repo.name}`} state={{ repo }}>
-                  {repo.name}
-                </Link>
-              </h3>
-            );
-          })
-        ) : (
-          <h4>Not Found</h4>
-        )}
-      </div>
-
+      <Suspense fallback={<h4>Loading...</h4>}>
+        <div className="list">
+          {loading ? (
+            <h4>Loading...</h4>
+          ) : filteredRepos.length > 0 ? (
+            filteredRepos.slice(startIndex, endIndex).map((repo) => {
+              return (
+                <h3 key={repo.name}>
+                  <Link to={`/repos/${repo.name}`} state={{ repo }}>
+                    {repo.name}
+                  </Link>
+                </h3>
+              );
+            })
+          ) : (
+            <h4>Not found</h4>
+          )}
+        </div>
+      </Suspense>
       {/* PAGINATION */}
       <div className="pagination">
         <button
@@ -142,7 +150,6 @@ function Repos() {
           Next
         </button>
       </div>
-
       <button onClick={handleAddRepo}>Add Repo</button>
     </div>
   );

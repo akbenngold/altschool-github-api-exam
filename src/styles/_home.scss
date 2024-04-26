@@ -6,7 +6,9 @@
   text-align: center;
   color: var(--clr-blue);
   position: relative;
-  height:70vh;  overflow: hidden;
+  height: 70vh;
+  overflow: hidden;
+  gap: 5rem;
 
   &__top {
     display: flex;

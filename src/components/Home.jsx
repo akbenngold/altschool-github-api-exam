@@ -4,15 +4,18 @@ import ErrorBoundary from "./ErrorBoundary";
 import coneImage from "./assets/cone.png";
 import loopImage from "./assets/loop.png";
 import githubImage from "./assets/github.png";
+import Info from "./Info";
 function Home() {
   return (
     <ErrorBoundary>
       <div className="home">
+        <Info />
         <div className="home__top">
-          {" "}
           <h2>
             Welcome. This website is simply to display list of Ojima's github
-            repos.
+            repos. You can also <span style={{ color: "blue" }}>add</span> and{" "}
+            <span style={{ color: "red" }}>delete</span> repo
+            <br />
             <br />
             Click the button below to explore
           </h2>

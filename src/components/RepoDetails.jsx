@@ -14,8 +14,6 @@ function RepoDetails() {
     <ErrorBoundary>
       {" "}
       <div className="repodetails">
-        {console.log(repo)}
-
         <h2>{repo.name}</h2>
         <ul className="repolist">
           {repo.description ? <li>Description: {repo.description}</li> : null}

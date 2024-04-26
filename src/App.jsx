@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import PageNotFound from "./components/PageNotFound";
 import Header from "./components/Header";
@@ -8,13 +9,14 @@ import RepoDetails from "./components/RepoDetails";
 import "./App.css";
 import "./styles/main.scss";
 import Home from "./components/Home";
-import RepoCreator from "./components/RepoCreator";
 
 function App() {
+  const [darkTheme, setDarkTheme] = useState(false);
+
   return (
     <div className="main">
       <ErrorBoundary>
-        <Header />
+        <Header darkTheme={darkTheme} />
       </ErrorBoundary>
       <ErrorBoundary>
         <Routes>
