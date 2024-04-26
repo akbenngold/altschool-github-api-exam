@@ -20,7 +20,7 @@ const RepoCreator = ({ setIsOpen }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const accessToken = import.meta.env.VITE_GITHUB_ACCESS_TOKEN;
-console.log(accessToken);
+    console.log(accessToken);
     try {
       const response = await fetch("https://api.github.com/user/repos", {
         method: "POST",
@@ -39,6 +39,9 @@ console.log(accessToken);
         setRepoName("");
         setDescription("");
         setIsPrivate(false);
+        setTimeout(() => {
+          window.location.href = "https://ojimagithub.netlify.app/repos/";
+        }, 500);
       } else {
         const data = await response.json();
         setError(data.message);
