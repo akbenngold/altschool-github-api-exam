@@ -17,6 +17,10 @@ const RepoDeleter = ({ repo }) => {
       );
       if (response.ok) {
         alert("Repository deleted successfully!");
+
+        setTimeout(() => {
+          window.location.href = "https://ojimagithub.netlify.app/repos/";
+        }, 4000);
       } else {
         const data = await response.json();
         setError(data.message);
