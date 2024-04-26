@@ -29,7 +29,12 @@ const RepoDeleter = ({ repo }) => {
 
   return (
     <div className="delete-btn-container">
-      <button onClick={handleDelete}>Delete Repository</button>
+      <button
+        onClick={handleDelete}
+        style={{ color: "white", backgroundColor: "red" }}
+      >
+        Delete Repository
+      </button>
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );

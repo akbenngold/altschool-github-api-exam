@@ -28,8 +28,14 @@ function RepoDetails() {
           <li>Last Update: {repo.updated_at}</li>
           <li>Date of Creation: {repo.created_at}</li>
         </ul>
-        {/* Render the RepoDeleter component */}
+
         <RepoDeleter repo={repo} />
+        <p>
+          In the name of God, please don't delete my repo. <br />
+          <span style={{ color: "blue" }}>Create</span> a test repo and{" "}
+          <span style={{ color: "red" }}>delete</span>. <br />
+          Thank you
+        </p>
       </div>
     </ErrorBoundary>
   );
