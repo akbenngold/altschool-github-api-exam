@@ -44,7 +44,7 @@ const RepoDeleter = ({ repo, setDlt }) => {
           height: "2rem",
         }}
       >
-        Delete
+        Confirm
       </button>
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
