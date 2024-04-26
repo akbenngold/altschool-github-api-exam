@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import ErrorBoundary from "./ErrorBoundary";
 import RepoDeleter from "./RepoDeleter";
@@ -28,10 +28,9 @@ function RepoDetails() {
           <li>Last Update: {repo.updated_at}</li>
           <li>Date of Creation: {repo.created_at}</li>
         </ul>
-
         <RepoDeleter repo={repo} />
-        <p>
-          In the name of God, please don't delete my repo. <br />
+        <p style={{ fontSize: "0.7rem" }}>
+          Please don't delete my repo 😢 <br />
           <span style={{ color: "blue" }}>Create</span> a test repo and{" "}
           <span style={{ color: "red" }}>delete</span>. <br />
           Thank you

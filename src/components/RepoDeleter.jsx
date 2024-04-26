@@ -35,9 +35,15 @@ const RepoDeleter = ({ repo }) => {
     <div className="delete-btn-container">
       <button
         onClick={handleDelete}
-        style={{ color: "white", backgroundColor: "red" }}
+        style={{
+          color: "white",
+          backgroundColor: "red",
+          fontSize: "0.7rem",
+          width: "4rem",
+          height: "2rem",
+        }}
       >
-        Delete Repository
+        Delete
       </button>
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
